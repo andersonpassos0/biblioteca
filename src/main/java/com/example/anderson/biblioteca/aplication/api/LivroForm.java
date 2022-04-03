@@ -17,7 +17,8 @@ public class LivroForm {
 		return Livro.builder()
 				.titulo(titulo)
 				.autor(autor)
-				.paginas(paginas).build();
+				.paginas(paginas)
+				.build();
 	}
 
 }

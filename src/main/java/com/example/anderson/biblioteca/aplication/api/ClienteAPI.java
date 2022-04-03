@@ -9,15 +9,17 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-@RequestMapping("/v1/livro")
-public interface LivroAPI {
+
+@RequestMapping("/v1/cliente")
+public interface ClienteAPI {
 	
 	@PostMapping
 	@ResponseStatus(code = HttpStatus.CREATED)
-		void salva (@RequestBody LivroForm livroForm);
+	void salva (@RequestBody ClienteForm clienteForm);
 	
 	@GetMapping
-	@ResponseStatus(code = HttpStatus.OK)	
-	List<LivroDTO> listaTodos();
+	@ResponseStatus(code = HttpStatus.OK)
+	List<ClienteDTO> listaTodos();
 	
+
 }

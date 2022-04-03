@@ -1,5 +1,7 @@
 package com.example.anderson.biblioteca.domain;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,22 +11,25 @@ import javax.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
-import lombok.Setter;
+import lombok.NoArgsConstructor;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@Builder
 @Entity
-public class Livro {
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Builder
+public class Cliente {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long Id;
+	private Long id;
 	@NotNull
-	private String titulo;
+	private String nome;
 	@NotNull
-	private String autor;
+	private Date nascimento;
 	@NotNull
-	private int paginas;
+	private String endereco;
+	@NotNull
+	private String telefone;
 
 }
