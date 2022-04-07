@@ -5,10 +5,8 @@ import java.util.Date;
 import com.example.anderson.biblioteca.domain.Emprestimo;
 
 import lombok.Getter;
-import lombok.Setter;
 
 @Getter
-@Setter
 public class EmprestimoForm {
 	
 	private Date dataSaida;
@@ -17,6 +15,7 @@ public class EmprestimoForm {
 	private Long idLivro;
 	
 	public Emprestimo toEntity() {
+		
 		return Emprestimo.builder()
 				.dataSaida(dataSaida)
 				.dataRetorno(dataRetorno)

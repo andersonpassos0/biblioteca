@@ -1,6 +1,7 @@
 package com.example.anderson.biblioteca.aplication.api;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,6 +14,7 @@ import lombok.extern.log4j.Log4j2;
 @AllArgsConstructor
 @RestController
 @Log4j2
+
 public class ClienteRestController implements ClienteAPI {
 	
 	private ClienteService clienteService;
@@ -30,6 +32,14 @@ public class ClienteRestController implements ClienteAPI {
 		List<Cliente> listaCliente = clienteService.listaClientes();
 		log.info("[Finish] ClienteRestController - busca");
 		return ClienteDTO.parseListDTO(listaCliente);
+	}
+
+	@Override
+	public void editaCliente(UUID idCliente, ClienteForm clienteForm) {
+		log.info("[start] ClienteRestController - editaCliente");
+		clienteService.editaCliente(idCliente, clienteForm.toEntity());
+		log.info("[finish] ClienteRestController - editaCliente");
+		
 	}
 	
 }

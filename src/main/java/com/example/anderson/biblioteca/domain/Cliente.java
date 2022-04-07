@@ -12,11 +12,13 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
+@Setter
 @Builder
 public class Cliente {
 	
@@ -31,5 +33,12 @@ public class Cliente {
 	private String endereco;
 	@NotNull
 	private String telefone;
+	
+	public void atualiza(Cliente cliente) {
+		this.nome = cliente.getNome();
+		this.nascimento = cliente.getNascimento();
+		this.endereco = cliente.getEndereco();
+		this.telefone = cliente.getTelefone();
+	}
 
 }

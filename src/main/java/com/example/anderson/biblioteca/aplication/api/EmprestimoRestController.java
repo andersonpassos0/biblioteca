@@ -5,13 +5,14 @@ import java.util.List;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.anderson.biblioteca.aplication.service.EmprestimoService;
+import com.example.anderson.biblioteca.domain.Emprestimo;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
-@Log4j2
 @AllArgsConstructor
 @RestController
+@Log4j2
 public class EmprestimoRestController implements EmprestimoAPI{
 
 	private EmprestimoService emprestimoService;
@@ -26,8 +27,10 @@ public class EmprestimoRestController implements EmprestimoAPI{
 
 	@Override
 	public List<EmprestimoDTO> listaTodos() {
-		// TODO Auto-generated method stub
-		return null;
+		log.info("[start] EmprestimoRestController - busca");
+		List<Emprestimo> listaEmprestimo = emprestimoService.listaEmprestimos();
+		log.info("[finish] EmprestimoRestController - busca");
+		return EmprestimoDTO.parseListDTO(listaEmprestimo);
 	}
 
 }
