@@ -14,7 +14,7 @@ public interface LivroAPI {
 	
 	@PostMapping
 	@ResponseStatus(code = HttpStatus.CREATED)
-		void salva (@RequestBody LivroForm livroForm);
+	void salva (@RequestBody LivroForm livroForm);
 	
 	@GetMapping
 	@ResponseStatus(code = HttpStatus.OK)	

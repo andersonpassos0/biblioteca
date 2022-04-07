@@ -9,16 +9,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-@RequestMapping("/v1/cliente")
-public interface ClienteAPI {
+@RequestMapping("/v1/emprestimo")
+public interface EmprestimoAPI {
 	
 	@PostMapping
 	@ResponseStatus(code = HttpStatus.CREATED)
-	void salva (@RequestBody ClienteForm clienteForm);
+	void salva (@RequestBody EmprestimoForm emprestimoForm);
 	
 	@GetMapping
 	@ResponseStatus(code = HttpStatus.OK)
-	List<ClienteDTO> listaTodos();
-	
+	List<EmprestimoDTO> listaTodos();
 
 }
